@@ -1,0 +1,7 @@
+SELECT * FROM population_data INNER JOIN nhgis_boundaries ON population_data.nhgis_boundary = nhgis_boundaries.id
+
+- This statement selects all the population data along with the boundaries. It returns an object that has all the fields of both the population_data and nhgis_boundaries tables and the node-mysql library nests it for you. It is used in this program to find population data during each election both by state and by the entire country. The join is needed in order to filter by state. 
+
+SELECT * FROM vote INNER JOIN election ON vote.election_id = election.election_id INNER JOIN fusion_link_states ON election.state_id = fusion_link_states.fusion_state_id WHERE (election.year=1840 OR election.year=1844 OR election.year=1848 OR election.year=1852 OR election.year=1856 OR election.year=1860 OR election.year=1864) AND election.description != "HAL"
+
+- This statement will select all votes, along with the election it belongs to, and the state from that election. It looks for any votes between 1840 and 1864 on presidential election years. It was decided to look for govenor, presidential, and congress elections. The return data is used to tally the vote counts both for the state and country levels. 

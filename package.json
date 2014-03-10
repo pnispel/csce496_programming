@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "node-mysql": "~0.3.7",
+    "mysql": "~2.1.0",
+    "promise-simple": "~0.1.0",
+    "lodash": "~2.4.1",
+    "colors": "~0.6.2"
+  }
+}
